@@ -1,0 +1,24 @@
+{
+  "name": "apple-user-migrator",
+  "version": "1.0.0",
+  "description": "This package migrates apple users from one developer account to the other",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "raunak_narayan",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "babel": "^6.23.0",
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.11.1",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.13"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.14.5"
+  }
+}
