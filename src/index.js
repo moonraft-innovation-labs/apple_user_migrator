@@ -1,12 +1,8 @@
 const Credentials = require("./AccessTokenGenerator");
 const TransferIdentifierGenerator = require("./TransferIdentifierGenerator");
 const AppleUserIdGenerator = require("./AppleUserIdGenerator");
-const UserFetch = require("./Users/UsersFetch");
-const UpdateUsers = require("./Users/UpdateUsers");
 
 const fs = require("fs");
-const { response, json } = require("express");
-
 
 var privateKey = ``;
 

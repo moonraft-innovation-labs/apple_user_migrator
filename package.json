@@ -2,7 +2,7 @@
   "name": "apple-user-migrator",
   "version": "1.0.0",
   "description": "This package migrates apple users from one developer account to the other",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "test"
   },
