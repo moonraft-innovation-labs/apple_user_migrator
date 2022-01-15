@@ -19,7 +19,6 @@ async function generateTransferIdentifier(uid, targetTeamId, client_secret, acce
         console.log('error = '+error);
         return {data: error};
     });
-    // console.log(response);
     return response.data;
 }
 

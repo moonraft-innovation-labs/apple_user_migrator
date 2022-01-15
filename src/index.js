@@ -9,13 +9,11 @@ var privateKey = ``;
 async function transferUsers(data, path_userTransferObjects, path_successfulUsers, path_failedUsers) {
   Credentials.initGenerator(data);
   var receiverCred = await Credentials.generateAccessToken();
-  // console.log(receiverCred);
 
   // get transferUserObjects from file
   var buffer = fs.readFileSync(path_userTransferObjects);
   var stringJsonFromFile = buffer.toString();
   var userTransferObjects = JSON.parse(stringJsonFromFile);
-  console.log("total "+userTransferObjects.length+" tranferIds are being transferred...");
 
   // start migrating users and store them in appropiate lists
   var successfulUsers = [];
@@ -82,7 +80,6 @@ async function generateAndStoreTransferId(data, allUsers, path_userTransferObjec
         transferId: tI.transfer_sub,
       };
       userTransferObjects.push(userTransferObject);
-      console.log(userTransferObject);
     } catch (error) {
       console.error(error);
       var userTransferObject = {
