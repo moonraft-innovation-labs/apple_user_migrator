@@ -9,7 +9,7 @@ async function generateNewAppleUserId(
   clientId
 ) {
   const subId = transferSub;
-  // console.log(access_token);
+  
   var response = await axios
     .post(
       "https://appleid.apple.com/auth/usermigrationinfo",

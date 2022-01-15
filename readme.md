@@ -20,11 +20,11 @@ There are **3** steps to successfully transfer your app and migrate it: -
 const privateKey = ``;
 var data = {
     privateKey: privateKey,
-    bundleID: "com.example.myapp", //..your app's bundle ID
-    teamID: "XXXXXXXXXX", //..find it in your developer account
+    bundleID: "com.example.myapp", // your app's bundle ID
+    teamID: "XXXXXXXXXX", // find it in your developer account
   };
   
-  //..paths where result data will be stored
+  // paths where result data will be stored
   const path_userTransferObjects = "./src/resultFiles/userTransferObjects.json";
   const path_successfulUsers = "./src/resultFiles/successfulUsers.json";
   const path_failedUsers = "./src/resultFiles/failedUsers.json";
@@ -64,18 +64,18 @@ Google it dude not a big deal offcourse 🤓.
 const privateKey = ``;
 var data = {
     privateKey: privateKey,
-    bundleID: "com.example.myapp", //..your app's bundle ID
-    teamID: "XXXXXXXXXX", //..find it in your developer account
+    bundleID: "com.example.myapp", // your app's bundle ID
+    teamID: "XXXXXXXXXX", // find it in your developer account
   };
   
-  //..paths where result data will be stored
+  // paths where result data will be stored
   const path_userTransferObjects = "./src/resultFiles/userTransferObjects.json";
   const path_successfulUsers = "./src/resultFiles/successfulUsers.json";
   const path_failedUsers = "./src/resultFiles/failedUsers.json";
 
   await migrator.transferUsers(data, path_userTransferObjects, path_successfulUsers, path_failedUsers);
 
-  //..do this on your own (depending on your DB)
+  // do this on your own (depending on your DB)
   storeTheNewAppleUIDsBackInTheDatabase();
 ```
 * <span style="color:red"> ***Note: - Do replace the older apple user Ids of all users with new ones in your database. Thats up to you folks🤪***

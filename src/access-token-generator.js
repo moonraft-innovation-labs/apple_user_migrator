@@ -3,7 +3,7 @@ const axios = require('axios')
 var querystring = require('querystring');
 
 var jsonBody = {
-    iss: "", //..apple developer account's Team ID
+    iss: "", // apple developer account's Team ID
     sub: "",
     aud: "https://appleid.apple.com",
     iat: 1625202847,
@@ -14,7 +14,7 @@ var options = {
     algorithm: "ES256"
 }
 
-//..apple developer account's private key
+// apple developer account's private key
 var privateKey = ``;
 
 var appBundleId = "";
@@ -24,8 +24,8 @@ function initGenerator(data){
     appBundleId = data.bundleID;
 
     jsonBody = {
-        iss: data.teamID, //..sender account Team ID
-        sub: appBundleId, //..app's bundle ID
+        iss: data.teamID, // sender account Team ID
+        sub: appBundleId, // app's bundle ID
         aud: "https://appleid.apple.com",
         iat: 1625202847,
         exp: 1625302847
@@ -41,8 +41,6 @@ async function generateAccessToken(){
 };
 
 function generateClientSecret(){
-    // console.log(jsonBody);
-    // console.log(privateKey);
     var token = jwt.sign(jsonBody, privateKey, options);
     return token;
 };

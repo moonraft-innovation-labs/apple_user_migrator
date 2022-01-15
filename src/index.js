@@ -1,6 +1,6 @@
-const Credentials = require("./AccessTokenGenerator");
-const TransferIdentifierGenerator = require("./TransferIdentifierGenerator");
-const AppleUserIdGenerator = require("./AppleUserIdGenerator");
+const Credentials = require("./access-token-generator");
+const TransferIdentifierGenerator = require("./transfer-identifier-generator");
+const AppleUserIdGenerator = require("./apple-userid-generator");
 
 const fs = require("fs");
 
@@ -11,16 +11,15 @@ async function transferUsers(data, path_userTransferObjects, path_successfulUser
   var receiverCred = await Credentials.generateAccessToken();
   // console.log(receiverCred);
 
-  //..get transferUserObjects from file
+  // get transferUserObjects from file
   var buffer = fs.readFileSync(path_userTransferObjects);
   var stringJsonFromFile = buffer.toString();
   var userTransferObjects = JSON.parse(stringJsonFromFile);
   console.log("total "+userTransferObjects.length+" tranferIds are being transferred...");
 
-  //..start migrating users and store them in appropiate lists
+  // start migrating users and store them in appropiate lists
   var successfulUsers = [];
   var failedUsers = [];
-  // UpdateUsers.firebaseInit();
   for await (const user of userTransferObjects) {
     var transferId = user.transferId;
     var currentEmail = user.email;
@@ -32,7 +31,7 @@ async function transferUsers(data, path_userTransferObjects, path_successfulUser
         currentEmail,
         data.bundleID
       );
-      // console.log(`generate new Apple User ID = ${JSON.stringify(response)}`);
+
       var successfulUserObject = {
         ...user,
         newAppleId: response.sub,
@@ -62,10 +61,6 @@ async function transferUsers(data, path_userTransferObjects, path_successfulUser
 async function generateAndStoreTransferId(data, allUsers, path_userTransferObjects, path_failedUsers) {
   Credentials.initGenerator(data);
   var senderCred = await Credentials.generateAccessToken();
-  // console.log(senderCred);
-
-  // console.log(allUsers.map((user) => user.providerData));
-  // console.log("total " + allUsers.length + " apple users");
 
   var userTransferObjects = [];
   var userTransferErrorObjects = [];
