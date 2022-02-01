@@ -7,7 +7,7 @@
     "test": "test"
   },
   "author": "raunak_narayan",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.21.4",
     "babel": "^6.23.0",
