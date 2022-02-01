@@ -1,4 +1,4 @@
-# Apple User migrator
+# Apple User Migrator
 If you are transferring your apple apps from one apple developer account to another and you use ***apple sign in*** in those apps then check this package out.
 
 If you are using ***Sign in with Apple*** then you need to migrate the users from the old apple developer account to the new one. It can be serious pain in the neck but not if you use this package.
@@ -56,7 +56,7 @@ var data = {
   + Transfer the app from sender apple developer account (you need account holder privileges) 
   + Accept the app on receiver apple developer account.
   
-Google it dude not a big deal offcourse 🤓.
+Google it, not a big deal ofcourse 🤓.
 
 ## **Generate new apple user IDs from previously generated trasnferIDs**
 * Get the required credentials from the new apple developer account where the app is and do this: -
@@ -78,5 +78,5 @@ var data = {
   // do this on your own (depending on your DB)
   storeTheNewAppleUIDsBackInTheDatabase();
 ```
-* <span style="color:red"> ***Note: - Do replace the older apple user Ids of all users with new ones in your database. Thats up to you folks🤪***
+* <span style="color:red"> ***Note: - Do replace the older apple user Ids of all users with new ones in your database. Thats up to you🤪***
   </span>
